@@ -2,7 +2,7 @@ import React from 'react'
 
 const Recipe = (props) => {
     return(
-        <div>
+        <div key={props.key}>
             <h3>
                 {props.title}
             </h3>

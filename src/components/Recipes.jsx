@@ -5,8 +5,9 @@ const Recipes = (props) => {
     return(
         <div key={props.recipes.id}>
             {props.recipeDetails.map((recipe) => (
-                <div>
+                <div >
                     <Recipe
+                        key={recipe.id}
                         title={recipe.title}
                         image={recipe.image} />
                 </div>
