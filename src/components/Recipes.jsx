@@ -5,11 +5,13 @@ const Recipes = (props) => {
     return(
         <div className="container">
             {props.recipeDetails.map((recipe) => (
-                <div >
+                <div  >
                     <Recipe
                         id={recipe.id}
                         title={recipe.title}
-                        image={recipe.image} />
+                        image={recipe.image}
+                        page={props.page}
+                        incrementPage={props.incrementPage} />
                 </div>
             )
             )}

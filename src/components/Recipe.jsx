@@ -6,7 +6,7 @@ const Recipe = (props) => {
             <h3>
                 {props.title}
             </h3>
-            <img src={props.image} alt={props.title}></img>   
+            <img src={props.image} alt={props.title} onClick={props.incrementPage}></img>   
         </div>
     )
 };
