@@ -37,7 +37,9 @@ const App = () => {
   },[complexSearch])
   
   /*--Page # helper functions--*/
-  
+  const pageIncrementor = () => {
+    setPage((prevState) => prevState+1)
+  }
 
 
   return (
@@ -45,7 +47,8 @@ const App = () => {
       <h1>Hello</h1>
       <Recipes 
         recipes={recipes}
-        recipeDetails={recipeDetails} />
+        recipeDetails={recipeDetails}
+        page={page} />
     </div>
   );
 }

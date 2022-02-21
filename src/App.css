@@ -3,11 +3,6 @@
   font-family: 'Oxygen', sans-serif;
 }
 
-.container {
-  display: inline-block;
-
-}
-
 .recipe-card {
   width: 33%;
   position: relative;
@@ -19,7 +14,7 @@
   min-height: 300px;
   float: left;
   left: 15%;
-  right: 15%
+  /* right: 15% */
 }
 
 .recipe-card img {
