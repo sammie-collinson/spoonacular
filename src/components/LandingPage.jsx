@@ -2,6 +2,9 @@ import React from 'react'
 import Recipes from './Recipes';
 
 const LandingPage = (props) => {
+
+
+    
     return(
         <div>
             <Recipes

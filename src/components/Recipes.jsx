@@ -3,7 +3,7 @@ import Recipe from './Recipe';
 
 const Recipes = (props) => {
     return(
-        <div className="container">
+        <div key={props.recipes.id} className="container">
             {props.recipeDetails.map((recipe) => (
                 <div  >
                     <Recipe
