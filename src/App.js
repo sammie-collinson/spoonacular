@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
 import axios from 'axios';
-import Recipes from './components/Recipes';
+import LandingPage from './components/LandingPage';
 
 const App = () => {
   
@@ -39,16 +39,18 @@ const App = () => {
   /*--Page # helper functions--*/
   const pageIncrementor = () => {
     setPage((prevState) => prevState+1)
+    console.log(recipes)
   }
 
 
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <Recipes 
+      <h1>Sammie's Spoonacular Project!</h1>
+      <LandingPage 
         recipes={recipes}
         recipeDetails={recipeDetails}
-        page={page} />
+        page={page}
+        incrementPage={pageIncrementor} />
     </div>
   );
 }
