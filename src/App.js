@@ -5,31 +5,40 @@ import Recipes from './components/Recipes';
 
 const App = () => {
   
+  /*--API Globals--*/
   const APIKey = process.env.REACT_APP_SPOONACULAR_KEY
+  const complexSearch = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APIKey}`
+  
+  /*--API States to pass as props to render API data--*/
   const[recipes, setRecipes] = useState([])
   const [recipeDetails, setRecipeDetails] = useState([])
 
-  const complexSearch = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APIKey}`
-
+  /*--Page # State to help with conditional rendering--*/
+  const [page, setPage] = useState(0)
+  
+  
+  /*--API endpoint access--*/
   useEffect(() => {
     async function getRecipes() {
       const res = await axios.get(`${complexSearch}`)
       setRecipes(res.data.results)
       
       let recipeDetails=[]
-        for(let i=0; i<res.data.results.length; i++) {
+      for(let i=0; i<res.data.results.length; i++) {
         async function getRecipeDetails() {
           const response = await axios.get(`https://api.spoonacular.com/recipes/${res.data.results[i].id}/information?apiKey=${APIKey}&includeNutrition=false`)
           recipeDetails.push(response.data)
           setRecipeDetails(recipeDetails)
         }
         getRecipeDetails()
-      }
-              
+      }     
     }
     getRecipes();
-
   },[complexSearch])
+  
+  /*--Page # helper functions--*/
+  
+
 
   return (
     <div className="App">

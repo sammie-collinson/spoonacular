@@ -3,11 +3,11 @@ import Recipe from './Recipe';
 
 const Recipes = (props) => {
     return(
-        <div key={props.recipes.id}>
+        <div className="container" key={props.recipes.id}>
             {props.recipeDetails.map((recipe) => (
                 <div >
                     <Recipe
-                        key={recipe.id}
+                        id={recipe.id}
                         title={recipe.title}
                         image={recipe.image} />
                 </div>
