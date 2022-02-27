@@ -2,13 +2,8 @@ import React from 'react'
 
 
 const Recipe = (props) => {
-    const {image, incrementPage, page, recipeID, title, recipePageID, setRecipePageID } = props
+    const {image, incrementPage, page, recipeID, title, recipePageID, setRecipePageID, index } = props
     
-   
-   const test = () => {
-       recipePageID=title
-   } 
-      
    
     return(
        <div>
@@ -16,7 +11,7 @@ const Recipe = (props) => {
             <h3>
                 {title}
             </h3>
-            <img src={image} alt={title} onClick={test}></img>   
+            <img src={image} alt={title} onClick={setRecipePageID} index={index}></img>   
         </div>
        </div>
         

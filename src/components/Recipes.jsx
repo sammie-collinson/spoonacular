@@ -6,10 +6,11 @@ const Recipes = (props) => {
 
     return(
         <div  key={'key'} className="container">
-            {props.recipeDetails.map((recipe) => (
+            {props.recipeDetails.map((recipe, bitch) => (
                 
                 <div  >
                     <Recipe
+                        index={bitch}
                         key={recipe.id}
                         recipeID={recipe.id}
                         title={recipe.title}

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './App.css';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
+import staticRecipeDetails from './complexSearch';
 
 const App = () => {
   
@@ -17,23 +18,28 @@ const App = () => {
   /*--Page # State to help with conditional rendering--*/
   const [page, setPage] = useState(0)
   
+
+  
   
   
   /*--API endpoint access--*/
   useEffect(() => {
     async function getRecipes() {
-      const res = await axios.get(`${complexSearch}`)
-      setRecipes(res.data.results)
+      setRecipeDetails(staticRecipeDetails);
+
+      // const res = await axios.get(`${complexSearch}`)
+      // setRecipes(res.data.results)
       
-      let recipeDetails=[]
-      for(let i=0; i<res.data.results.length; i++) {
-        async function getRecipeDetails() {
-          const response = await axios.get(`https://api.spoonacular.com/recipes/${res.data.results[i].id}/information?apiKey=${APIKey}&includeNutrition=false`)
-          recipeDetails.push(response.data)
-          setRecipeDetails(recipeDetails)
-        }
-        getRecipeDetails()
-      }     
+    
+      // let recipeDetails=[]
+      // for(let i=0; i<res.data.results.length; i++) {
+      //   async function getRecipeDetails() {
+      //     const response = await axios.get(`https://api.spoonacular.com/recipes/${res.data.results[i].id}/information?apiKey=${APIKey}&includeNutrition=false`)
+      //     recipeDetails.push(response.data)
+      //     setRecipeDetails(recipeDetails)
+      //   }
+      //   getRecipeDetails()
+      // }     
     }
     getRecipes();
   },[complexSearch])
@@ -41,9 +47,29 @@ const App = () => {
   /*--Page # helper functions--*/
   const pageIncrementor = () => {
     setPage((prevState) => prevState+1)
-    
+        
   }
 
+  // var eventName = "mousedown";
+  // document.body.addEventListener(eventName, function(e) {
+  //   var elementSelector = "img";
+ 
+  //   function handler() {
+  //     recipePageIDHelper(this.children[1].getAttribute('index'));
+  //     // recipePageIDHelper();
+  //   }
+  //   // loop parent nodes from the target to the delegation node
+  //   for (var target = e.target; target && target != this; target = target.parentNode) {
+  //     if (target.matches(elementSelector)) {
+  //       handler.call(target, e);
+  //       break;
+  //     }
+  //   }
+  // }, false);
+
+  const recipePageIDHelper = (indexNumberOnClick) => {
+    setRecipePageID(recipeDetails[indexNumberOnClick.target.getAttribute('index')].title)
+  }
 
   return (
     <div className="App">
@@ -53,6 +79,7 @@ const App = () => {
         page={page}
         incrementPage={pageIncrementor}
         recipePageID={recipePageID}
+        setRecipePageID={recipePageIDHelper}
         />
     </div>
   );
