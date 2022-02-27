@@ -1,5 +1,6 @@
 import React from 'react'
 import Recipes from './Recipes';
+import IndividualRecipePage from './IndividualRecipe';
 
 const LandingPage = (props) => {
 
@@ -7,11 +8,19 @@ const LandingPage = (props) => {
     
     return(
         <div>
+            <div key={'key'}>
             <Recipes
                  recipeDetails={props.recipeDetails}
-                 recipes={props.recipes}
                  page={props.page}
-                 incrementPage={props.incrementPage}/>
+                 key={'key'}
+                 incrementPage={props.incrementPage}
+                 recipePageID={props.recipePageID}
+                 setRecipePageID={props.setRecipePageID}
+                 />
+            </div>
+            <IndividualRecipePage
+                recipePageID={props.recipePageID} />
+
         </div>
     )
 };

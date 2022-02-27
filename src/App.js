@@ -12,9 +12,11 @@ const App = () => {
   /*--API States to pass as props to render API data--*/
   const[recipes, setRecipes] = useState([])
   const [recipeDetails, setRecipeDetails] = useState([])
+  const [recipePageID, setRecipePageID] = useState('')
 
   /*--Page # State to help with conditional rendering--*/
   const [page, setPage] = useState(0)
+  
   
   
   /*--API endpoint access--*/
@@ -39,7 +41,7 @@ const App = () => {
   /*--Page # helper functions--*/
   const pageIncrementor = () => {
     setPage((prevState) => prevState+1)
-    console.log(recipes)
+    
   }
 
 
@@ -47,10 +49,11 @@ const App = () => {
     <div className="App">
       <h1>Sammie's Spoonacular Project!</h1>
       <LandingPage 
-        recipes={recipes}
         recipeDetails={recipeDetails}
         page={page}
-        incrementPage={pageIncrementor} />
+        incrementPage={pageIncrementor}
+        recipePageID={recipePageID}
+        />
     </div>
   );
 }
