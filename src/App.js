@@ -47,33 +47,19 @@ const App = () => {
   /*--Page # helper functions--*/
   const pageIncrementor = () => {
     setPage((prevState) => prevState+1)
-        
-  }
+    }
 
-  // var eventName = "mousedown";
-  // document.body.addEventListener(eventName, function(e) {
-  //   var elementSelector = "img";
- 
-  //   function handler() {
-  //     recipePageIDHelper(this.children[1].getAttribute('index'));
-  //     // recipePageIDHelper();
-  //   }
-  //   // loop parent nodes from the target to the delegation node
-  //   for (var target = e.target; target && target != this; target = target.parentNode) {
-  //     if (target.matches(elementSelector)) {
-  //       handler.call(target, e);
-  //       break;
-  //     }
-  //   }
-  // }, false);
-
-  const recipePageIDHelper = (indexNumberOnClick) => {
+   const recipePageIDHelper = (indexNumberOnClick) => {
     setRecipePageID(recipeDetails[indexNumberOnClick.target.getAttribute('index')].title)
+    }
+  
+  const returnHome = () => {
+    setPage(0)
   }
 
   return (
     <div className="App">
-      <h1>Sammie's Spoonacular Project!</h1>
+      <h1 onClick={(returnHome)}>Sammie's Spoonacular Project!</h1>
       <LandingPage 
         recipeDetails={recipeDetails}
         page={page}

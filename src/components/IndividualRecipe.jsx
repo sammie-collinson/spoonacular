@@ -11,9 +11,10 @@ const IndividualRecipePage = (props) => {
     
     return(
         <div>
-            <h1>
+            <h2>
                 {specificRecipe[0].title}
-            </h1>
+            </h2>
+            <img src={specificRecipe[0].image} alt={specificRecipe[0].title}></img>
         </div>
     )
 };
