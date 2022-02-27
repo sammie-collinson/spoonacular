@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 onClick={(returnHome)}>Sammie's Spoonacular Project!</h1>
+      <h1 className="masthead" onClick={(returnHome)}>Sammie's Spoonacular Project!</h1>
       <LandingPage 
         recipeDetails={recipeDetails}
         page={page}
