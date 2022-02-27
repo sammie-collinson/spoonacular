@@ -8,6 +8,8 @@
 .masthead {
   background-color: #f1b367;
   padding: 60px;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 60px;
 }
 
 .masthead:hover {
@@ -18,12 +20,15 @@
   width: calc(33.33333% -7px);
   position: relative;
   margin: 10px 20px;
-  max-width: 450px;
-  max-height: 450px;
+  max-width: 650px;
+  max-height: 650px;
   min-width: 450px;
   min-height: 450px;
+  right: 20%;
   float: left;
-  left: 10%
+  left: 5%;
+  
+  
 }
 
 .recipe-card img {
@@ -43,6 +48,7 @@
   max-width: 40%;
   min-width: 25%;
   margin-right: 2%;
+  margin-left: 5%;
 }
 
 .ingredients ul {
@@ -56,4 +62,8 @@ li {
 
 .instructions {
   margin-right: 5%;
+}
+
+.single-recipe img {
+  border: solid black 5px;
 }

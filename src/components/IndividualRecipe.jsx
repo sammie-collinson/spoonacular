@@ -7,11 +7,19 @@ const IndividualRecipePage = (props) => {
     const specificRecipe = recipeDetails.filter(recipe =>
         recipe.title===recipePageID);
 
-    console.log(specificRecipe)
+    let instructions;
+    const nullFixer = () => {
+        if(specificRecipe[0].instructions===null){
+            instructions="no instructions sorry good luck lmaoooo"
+        } else{
+            instructions=specificRecipe[0].instructions.replace(/<[^>]+>/g, '')
+        }
+    }
+    nullFixer();
     
     return(
         <div>
-            <div>
+            <div className="single-recipe">
                 <h2>
                  {specificRecipe[0].title}
                 </h2>
@@ -32,7 +40,7 @@ const IndividualRecipePage = (props) => {
             </div>
             <div className="instructions">
                 <h3>Instructions</h3>
-                <p>{specificRecipe[0].instructions.replace(/<[^>]+>/g, '')}</p>
+                <p>{instructions}</p>
             </div>
         </div>
     )

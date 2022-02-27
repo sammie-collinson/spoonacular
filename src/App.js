@@ -43,6 +43,8 @@ const App = () => {
     }
     getRecipes();
   },[complexSearch])
+
+  console.log(recipeDetails)
   
   /*--Page # helper functions--*/
   const pageIncrementor = () => {
