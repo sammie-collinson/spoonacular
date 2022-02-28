@@ -12,6 +12,31 @@
   font-size: 60px;
 }
 
+.ingredients {
+  float: left;
+  max-width: 40%;
+  min-width: 25%;
+  margin-right: 2%;
+  margin-left: 5%;
+}
+
+.ingredients ul {
+  list-style-type: square;
+}
+
+li {
+  padding: 2px;
+  text-align: left;
+}
+
+.instructions {
+  margin-right: 5%;
+}
+
+.single-recipe img {
+  border: solid black 5px;
+}
+
 .masthead:hover {
   cursor: pointer;
 }
@@ -41,29 +66,4 @@
 .recipe-card img:hover {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   cursor: pointer;
-}
-
-.ingredients {
-  float: left;
-  max-width: 40%;
-  min-width: 25%;
-  margin-right: 2%;
-  margin-left: 5%;
-}
-
-.ingredients ul {
-  list-style-type: square;
-}
-
-li {
-  padding: 2px;
-  text-align: left;
-}
-
-.instructions {
-  margin-right: 5%;
-}
-
-.single-recipe img {
-  border: solid black 5px;
 }
