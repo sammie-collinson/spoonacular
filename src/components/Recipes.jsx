@@ -5,12 +5,12 @@ const Recipes = (props) => {
 
 
     return(
-        <div  key={'key'} className="container">
-            {props.recipeDetails.map((recipe, bitch) => (
+        <div className="container">
+            {props.recipeDetails.map((recipe, index) => (
                 
-                <div  >
+                <div key={index}  >
                     <Recipe
-                        index={bitch}
+                        index={index}
                         key={recipe.id}
                         recipeID={recipe.id}
                         title={recipe.title}

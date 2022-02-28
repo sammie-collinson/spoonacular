@@ -18,28 +18,24 @@ const App = () => {
   /*--Page # State to help with conditional rendering--*/
   const [page, setPage] = useState(0)
   
-
-  
-  
-  
+    
   /*--API endpoint access--*/
   useEffect(() => {
     async function getRecipes() {
       setRecipeDetails(staticRecipeDetails);
 
-      // const res = await axios.get(`${complexSearch}`)
-      // setRecipes(res.data.results)
-      
-    
-      // let recipeDetails=[]
-      // for(let i=0; i<res.data.results.length; i++) {
-      //   async function getRecipeDetails() {
-      //     const response = await axios.get(`https://api.spoonacular.com/recipes/${res.data.results[i].id}/information?apiKey=${APIKey}&includeNutrition=false`)
-      //     recipeDetails.push(response.data)
-      //     setRecipeDetails(recipeDetails)
-      //   }
-      //   getRecipeDetails()
-      // }     
+  //     const res = await axios.get(`${complexSearch}`)
+  //     setRecipes(res.data.results)
+          
+  //     let recipeDetails=[]
+  //      for(let i=0; i<res.data.results.length; i++) {
+  //         async function getRecipeDetails() {
+  //         const response = await axios.get(`https://api.spoonacular.com/recipes/${res.data.results[i].id}/information?apiKey=${APIKey}&includeNutrition=false`)
+  //         recipeDetails.push(response.data)
+  //         setRecipeDetails(recipeDetails)
+  //       }
+  //       getRecipeDetails()
+  //     }     
     }
     getRecipes();
   },[complexSearch])

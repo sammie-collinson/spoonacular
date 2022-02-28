@@ -9,7 +9,7 @@ const LandingPage = (props) => {
         pageSetter = <Recipes
         recipeDetails={props.recipeDetails}
         page={props.page}
-        key={'key'}
+        id={'key'}
         incrementPage={props.incrementPage}
         recipePageID={props.recipePageID}
         setRecipePageID={props.setRecipePageID}
